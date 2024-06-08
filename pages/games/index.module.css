@@ -1,0 +1,104 @@
+.content {
+  display: flex;
+  justify-content: flex-start;
+  column-gap: 40px;
+}
+ 
+.gameCard {
+  display: flex;
+  column-gap: 25px;
+  margin-top:40px;
+}
+
+.games {
+  width: 80px;
+  height: auto;
+  object-fit: cover;
+}
+
+.field {
+  margin-top: 20px;
+  width: 60dvh;
+  height: 60dvh;
+}
+
+.row {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+}
+
+.row:first-of-type {
+  border-top: 1px solid black;
+}
+
+.col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 10%;
+  min-width: 10%;
+  border-right: 1px solid black;
+}
+
+.col:first-child {
+  border-left: 1px solid black;
+}
+
+.row:nth-child(odd) .col:nth-child(odd) {
+  background-color: rgb(46, 45, 45);
+}
+
+.row:nth-child(even) .col:nth-child(even) {
+  background-color: rgb(46, 45, 45);
+}
+
+.start{
+  display: block;
+  margin-top: 4px;
+  background-color: lime;
+  border: 2px solid yellow;
+  padding: 12px;
+  border-radius: 4px;
+  transition: 0.4s;
+  font-weight: 700;
+  color:darkgreen;
+  cursor:pointer;
+}
+
+.start:hover {
+  transform: scale(1.1);
+}
+
+.start:active {
+  background-color: limegreen;
+}
+
+.instructionsForAgent{
+  display: block;
+  width: 400px;
+  height: 200px;
+  border:2px solid darkgreen;
+  border-radius: 4px;
+}
+
+.controls {
+  margin-top: 40px;
+}
+
+.agent {
+  mix-blend-mode: unset;
+}
+
+.turnFinishPoint {
+  text-align: right;
+}
+
+.youtubeCard {
+  display: flex;
+  column-gap: 25px;
+  margin-top:40px;
+}
