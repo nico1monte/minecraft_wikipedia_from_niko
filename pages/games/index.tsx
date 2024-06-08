@@ -1,9 +1,17 @@
 import Image from "next/image";
 import styles from "./index.module.css";
 import { useState } from "react";
+import { useGoAgent } from "./useGoAgent";
 
 export default function Games() {
     const [isStarted, setIsStarted] = useState(false);
+    const [userInput, setUserInput] = useState('');
+
+    const { runUserInput } = useGoAgent();
+
+    const startGame = () => {
+        runUserInput(userInput);
+    }
 
     return (
         <div>
@@ -178,7 +186,7 @@ export default function Games() {
                             width={60}
                             height={30}
                             priority
-                           title="Finish"
+                            title="Finish"
                         />
 
                     </div>
@@ -207,8 +215,8 @@ export default function Games() {
                     />
 
                     {isStarted === true && (<div className={styles.controls}>
-                        <textarea className={styles.instructionsForAgent}></textarea>
-                        <button title="do you want to run your program into the Agent's brain?" type='button' className={styles.start}>Start game with your instruction</button>
+                        <textarea onChange={(event) => { setUserInput(event.target.value) }} className={styles.instructionsForAgent}></textarea>
+                        <button onClick={startGame} title="do you want to run your program into the Agent's brain?" type='button' className={styles.start}>Start game with your instruction</button>
                     </div>)}
 
                     {isStarted === false && (
